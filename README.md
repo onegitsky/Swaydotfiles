@@ -1,4 +1,4 @@
-# KDE6 Dotfiles
+# Personal Sway Dotfiles
 <br>
 
 **GTK Theme:** Gruvbox-Material-Dark <br>  
