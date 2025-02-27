@@ -1,0 +1,169 @@
+# alacritty.toml
+
+general.live_config_reload = true
+
+[env]
+TERM = "alacritty"
+
+[window]
+decorations     = "none"
+dynamic_padding = false
+dynamic_title   = false
+opacity         = 0.94
+startup_mode    = "Windowed"
+title           = "i hate my life lol :')"
+
+[window.dimensions]
+columns = 90
+lines   = 25
+
+[window.padding]
+x = 6
+y = 6
+
+[scrolling]
+history = 10000
+
+[font]
+builtin_box_drawing = false
+size                = 11
+
+[font.bold]
+family = "FiraCode Nerd Font"
+style  = "SemiBold"
+
+[font.bold_italic]
+family = "FiraCode Nerd Font"
+style  = "SemiBold Italic"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "FiraCode Nerd Font"
+style  = "Italic"
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style  = "SemiBold"
+
+[font.offset]
+x = -1
+y = -1
+
+[colors.primary]
+background = "#282828"
+foreground = "#ebdbb2"
+
+[colors.bright]
+black   = "#928374"
+blue    = "#83a598"
+cyan    = "#8ec07c"
+green   = "#b8bb26"
+magenta = "#d3869b"
+red     = "#fb4934"
+white   = "#ebdbb2"
+yellow  = "#fabd2f"
+
+[colors.cursor]
+cursor = "#bdae93"
+text   = "CellForeground"
+
+[colors.footer_bar]
+background = "#171825"
+foreground = "#232323"
+
+[colors.hints.end]
+background = "CellBackground"
+foreground = "CellForeground"
+
+[colors.hints.start]
+background = "CellBackground"
+foreground = "CellForeground"
+
+[colors.line_indicator]
+background = "None"
+foreground = "None"
+
+[colors.normal]
+
+black   = "#282828"
+blue    = "#458588"
+cyan    = "#689d6a"
+green   = "#98971a"
+magenta = "#b16286"
+red     = "#cc241d"
+white   = "#ebdbb2"
+yellow  = "#d79921"
+
+[colors.search.focused_match]
+background = "CellBackground"
+foreground = "#d5c4a1"
+
+[colors.search.matches]
+background = "CellBackground"
+foreground = "#d5c4a1"
+
+[colors.selection]
+background = "CellForeground"
+text       = "CellBackground"
+
+[colors.vi_mode_cursor]
+cursor = "CellForeground"
+text   = "CellBackground"
+
+[bell]
+animation = "EaseOutExpo"
+color     = "#C0C5CE"
+command   = "None"
+duration  = 0
+
+[selection]
+save_to_clipboard     = false
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+vi_mode_style    = "Block"
+
+[[keyboard.bindings]]
+action = "Paste"
+key    = "V"
+mods   = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key    = "C"
+mods   = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key    = "PageUp"
+mods   = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key    = "PageDown"
+mods   = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToTop"
+key    = "Home"
+mods   = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToBottom"
+key    = "End"
+mods   = "Shift"
+
+[mouse]
+hide_when_typing = true
+
+[debug]
+highlight_damage   = false
+log_level          = "Warn"
+persistent_logging = false
+print_events       = false
+render_timer       = false
