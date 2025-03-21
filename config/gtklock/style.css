@@ -1,0 +1,62 @@
+window {
+  background-color: #282828;
+  background-image: url("file:///home/lol/Pictures/Wallpapers/browser/yyeess.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#window-box {
+  background-color: alpha(#282828, 0);
+  border: 0px solid #ebdbb2;
+  border-radius: 5px;
+  padding: 25 3em;
+}
+
+#clock-label {
+  color: #fbf1c7;
+  min-width: 320px;
+  font-weight: 500;
+  font-size: 9pt;
+  padding: 10px 30px;
+  margin-bottom: -5px;
+  margin-top: -6px;
+}
+
+#date-label {
+  color: #fbf1c7;
+}
+
+/* hide "Password:" label */
+#input-label {
+  font-size: 0;
+}
+
+#user-name {
+  font-size: 0pt;
+}
+
+#input-field {
+  color: alpha(#ebdbb2, 0.8);
+  background-color: alpha(#282828, 0.4);
+  border-radius: 10px;
+  margin-top: 6px;
+  padding: 2.5px 15px;
+  border: 1px solid alpha(#ebdbb2, 0.5);
+}
+
+#warning-label,
+#error-label,
+#unlock-button {
+  margin-top: 12px;
+  padding: 10px 2rem;
+}
+
+#unlock-button {
+  padding: 4px 15px;
+  border-radius: 10px;
+  background-color: alpha(#282828, 0.1);
+  color: alpha(#ebdbb2, 0.4);
+  border-radius: 10px;
+  border: 1px solid alpha(#ebdbb2, 0.2);
+}
