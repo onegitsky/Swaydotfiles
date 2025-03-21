@@ -1,18 +1,22 @@
-	font = "FiraCode Nerd Font"
-	font-size = 14
+  output = "DP-1"
+  font = "FiraCode Nerd Font"
+	font-size = 18
 	font-features = ""
 	font-variations = ""
 	hint-font = true
 	text-color = #ebdbb2
-	background-color = #1a1a1a
-	prompt-color = #098aa1
+	background-color = #191919ee
+  selection-background = #ebdbb2
+  selection-background-padding = 8,
+  selection-background-corner-radius = 12
+	prompt-color = #ebdbb2
 	placeholder-color = #d5c4a1
-	input-color = #e1e1e1
-	default-result-color = #4f4f4f
-	selection-color = #0aa3be
-	# Matching portion of selection text
-	selection-match-color = #b8bb26
+	input-color = #cec5a3
+	default-result-color = #ebdbb2
+	selection-color = #1a1a1a
 
+	# Matching portion of selection text
+	selection-match-color = #20798d
 
 	# Supported values: bar, block, underscore
 	text-cursor-style = underscore
@@ -23,30 +27,32 @@
 	text-cursor-corner-radius = 0
 	# text-cursor-style = underscore, or to 2 otherwise.
 	# text-cursor-thickness = 1
+	# Show a text cursor in the input field.
+	text-cursor = false
 
 	# Prompt to display.
-	prompt-text = "  ~"
-
+	prompt-text = ""
+  #  󰣇
 	# Extra horizontal padding between prompt and input.
-	prompt-padding = 2
+	prompt-padding = 16
 
 	# Placeholder input text.
-	placeholder-text = ""
+	placeholder-text = "wyw?"
 
 	# Maximum number of results to display.
 	# If 0, tofi will draw as many results as it can fit in the window.
-	num-results = 7
+	num-results = 6
 
 	# Spacing between results in pixels. Can be negative.
 	result-spacing = 20
 
 	# List results horizontally.
-	horizontal = true
+	horizontal = false
 
 	# Minimum width of input in horizontal mode.
-	min-input-width = 15
+	min-input-width = 130
 	width = 100%
-	height = 30
+	height = 100%
 	outline-width = 0
 	outline-color = #ebdbb2
 
@@ -54,13 +60,13 @@
 
 	border-color = #ebdbb2
 
-	corner-radius = 0
+	corner-radius = 4
 
 
-	padding-top = 0%
-	padding-bottom = 0%
-	padding-left = 0%
-	padding-right = 0%
+	padding-top = 35%
+	padding-bottom = 0
+	padding-left = 43%
+	padding-right = 0
 	clip-to-padding = true
 
 	# Whether to scale the window by the output's scale factor.
@@ -71,10 +77,10 @@
 #
 	# The name of the output to appear on. An empty string will use the
 	# default output chosen by the compositor.
-	output = ""
+	output = "DP-1"
 
 
-	anchor = top
+	anchor = center
 
 	# Set the size of the exclusive zone.
 	#
@@ -88,7 +94,7 @@
 
 	# Window offset from edge of screen. Only has an effect when anchored
 	# to the relevant edge. Can be pixels or a percentage.
-	margin-top = 0
+	margin-top = 0%
 	margin-bottom = 0
 	margin-left = 0
 	margin-right = 0
@@ -99,8 +105,7 @@
 	# Hide the mouse cursor.
 	hide-cursor = false
 
-	# Show a text cursor in the input field.
-	text-cursor = false
+
 
 	# Sort results by number of usages in run and drun modes.
 	history = true
@@ -129,7 +134,7 @@
 
 	# If true, use physical keys for shortcuts, regardless of the current
 	# keyboard layout. If false, use the current layout's keys.
-	physical-keybindings = true
+	physical-keybindings = false
 
 	# Instead of printing the selected entry, print the 1-based index of
 	# the selection. This option has no effect in run or drun mode. If
