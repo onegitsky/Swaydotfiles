@@ -8,9 +8,9 @@
     // "custom/gpu",  "custom/weather","sway/window", "custom/gpu",  "custom/media",  
     // Choose the order of the modules
 
-    "modules-left": ["custom/playerctl", "pulseaudio-slider"],
+    "modules-left": ["custom/playerctl"],
     "modules-center": ["clock#time", "sway/mode"],
-    "modules-right": ["temperature", "cpu", "memory", "pulseaudio", "network",  "custom/scratchpad_indicator", "tray"],
+    "modules-right": ["temperature", "memory", "pulseaudio", "network", "tray", "custom/scratchpad_indicator", "custom/wallpaper"],
     
     // Modules configuration
     "sway/workspaces": {
@@ -28,6 +28,12 @@
             "default": ""
         }
     },
+    "custom/wallpaper": {
+        "format": "󱥼",
+        "on-click": "~/.local/bin/swww_wallpapers.sh",
+        "tooltip": false,
+        "interval": 0
+    },
     "sway/mode": {
         "format": "<span style=\"italic\"> {} </span>"
     },
@@ -37,57 +43,59 @@
         "tooltip": false
     },
     "tray": {
-        //"icon-size": 14,
+        "icon-size": 13,
         "spacing": 4
     },
     "clock#time": {
-        "interval": 60,
-        "format": "{:%a %d %b, %I:%M%p} ",
+        "interval": "60",
+        "format": "{:%a %d %b, %I:%M%p}",
         "tooltip": true,
         "tooltip-format": "<big>{:%Y %B \t Date: %D }</big>\n<tt>{calendar}</tt>"
     },
     "temperature": {
-        "thermal-zone": 1,
+        //"thermal-zone": 1,
         "interval": "15",
-        "hwmon-path": "/sys/class/hwmon/hwmon1/temp2_input",
+        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
         "critical-threshold": 75,
         "format-critical": "  {temperatureC}°C",
         "format": "{icon} {temperatureC}°C",
         "format-icons": ["", "", ""],
-        "max-length": 8,
-        "min-length": 7,
+        "max-length": 6,
+        "min-length": 6,
         "tooltip": false
     },
     "cpu": {
         "interval": 15,      
-        "format": "  {usage:2}% / ",
+        "format": " {usage:2}%",
         "tooltip": false
     },
     "memory": {
         "interval": 15,
-        "format": "  {percentage}% ",
+        "format": "  {percentage}%",
         "tooltip": false
     },
     "network": {
         // "interface": "wlan0", // (Optional) To force the use of this interface,
-        "format-wifi": "<span color=\"#ebdbb2\"></span>  ",
+        "interval": 15,
+        "format-wifi": "<span color=\"#8ec07c\">  {bandwidthUpBytes}</span>",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "󰖪 ",
-        "format-alt": "{ifname}: {ipaddr}/{cidr} ",
+        "format-disconnected": "󰖪",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "family": "ipv4",
-        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthUpBits}  {bandwidthDownBits}",
+        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthUpBits}  {bandwidthDownBits}",
         "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n {bandwidthUpBits}  {bandwidthDownBits}"
     },
 // essid for format wifi
     "pulseaudio": {
         "scroll-step": 5, // %, can be a float
-        "format": "/ {icon}  {volume}% {format_source}",
+        "format": "{icon}  {volume:2}% {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "<span color=\"#ebdbb2\">/</span>  0% {format_source}",
-        "format-source": "<span color=\"#ebdbb2\"> /</span> ",
-        "format-source-muted": "<span color=\"#7c6f64\"></span>  <span color=\"#ebdbb2\">/</span> ",
+        "format-muted": "<span color=\"#ebdbb2\"></span> 0% {format_source}",
+        "format-source": "<span color=\"#d3869b\"></span>",
+        "format-source-muted": "<span color=\"#a89985\"> </span><span color=\"#ebdbb2\"></span>",
+        "max-volume": 125,
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -100,35 +108,22 @@
         "on-click-middle": "pavucontrol",
         "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-        "tooltip": false
+        "tooltip": false,
     },
     "custom/playerctl": {
-        "exec": "$HOME/.config/waybar/custom_modules/media-player-status.py --player spotify",
+        "exec": "~/.config/waybar/custom_modules/media-player-status.py --player=spotify",
         "return-type": "json",
         "on-click": "playerctl -p spotify play-pause",
-        "on-click-middle": "playerctl -p spotify next",
-        "on-scroll-up": "playerctl -p spotify volume 0.7",
-        "on-scroll-down": "playerctl -p spotify volume 0.5",
-        "tooltip": false
-    },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-    },
-        "escape": false,
-        "exec": "$HOME/.config/waybar/custom_modules/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on 
+        "on-click-middle": "playerctl -p spotify volume 0.5 && notify-send 'Spotify' '50% Volume Set!'$(playerctl -p spotify metadata --format '{{duration(position)}}/{{duration(mpris:length)}}')",
+        "on-click-right": "playerctl -p spotify volume 0.6 && notify-send 'Spotify' $(playerctl -p spotify metadata --format '{{duration(position)}}/{{duration(mpris:length)}} 󰕾 {{volume * 100}}%')",
+        "on-scroll-up": "playerctl -p spotify volume 0.2+ && notify-send 'Spotify' $(playerctl -p spotify metadata --format '{{duration(position)}}/{{duration(mpris:length)}} 󰕾 {{volume * 100}}%')",
+        "on-scroll-down": "playerctl -p spotify volume 0.2- && notify-send 'Spotify' $(playerctl -p spotify metadata --format '{{duration(position)}}/{{duration(mpris:length)}} 󰕾 {{volume * 100}}%')",
+        "tooltip": false,
     },
     "custom/scratchpad_indicator": {
         "interval": 1,
         "exec": "swaymsg -t get_tree | ~/.config/waybar/custom_modules/scratchpads.py",
-        "format": "/  {} / ",
+        "format": " {}",
         "on-click": "swaymsg 'scratchpad show'",
         "on-click-right": "swaymsg 'move scratchpad'",
         "tooltip": false
