@@ -1,0 +1,102 @@
+[global]
+    ### Display ###
+    monitor = 0
+    follow = mouse
+
+    ### Geometry ###
+    width = 210
+    height = (0, 300)
+    origin = top-left
+    offset = (20, 20)
+    scale = 4
+    
+    # Set notification limit to 1 to show only one notification at a time
+    notification_limit = 1
+
+    ### Progress bar ###
+    progress_bar = true
+    progress_bar_height = 10
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+    progress_bar_corner_radius = 0
+    progress_bar_corners = all
+    icon_corner_radius = 2
+    icon_corners = all
+
+    indicate_hidden = yes
+    transparency = 0
+    separator_height = 0
+    padding = 8
+    horizontal_padding = 10
+    text_icon_padding = 0
+    frame_width = 1
+    frame_color = "#1a1a1a"
+    gap_size = 0
+    separator_color = frame
+    
+    # Sort by update time to put most recent at front
+    sort = update
+
+    ### Text ###
+    font = FiraMono NerdFont 9
+    line_height = 0
+    markup = full
+    format = "󰓇 <b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 10
+    ellipsize = middle
+    ignore_newline = false
+    stack_duplicates = true
+    hide_duplicate_count = true
+    show_indicators = false
+
+    ### Icons ###
+    enable_recursive_icon_lookup = true
+    icon_theme = Gruvbox-Material-Dark
+    icon_position = left
+    min_icon_size = 50
+    max_icon_size = 50
+    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+
+    ### History ###
+    sticky_history = false
+    # Set history length to 0 to delete older notifications
+    history_length = 1
+
+    ### Misc/Advanced ###
+    dmenu = /usr/bin/dmenu -p dunst:
+    browser = /usr/bin/xdg-open
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    corner_radius = 3
+    corners = all
+    ignore_dbusclose = false
+
+    ### mouse ###
+    mouse_left_click = close_all
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_current
+
+[urgency_low]
+    background = "#3c3836"
+    foreground = "#a89984"
+    timeout = 1
+    default_icon = dialog-information
+
+[urgency_normal]
+    background = "#3c3836"
+    foreground = "#ebdddd"
+    timeout = 1
+    override_pause_level = 30
+    new_icon = ~/Pictures/icons/lol.jpg
+
+[urgency_critical]
+    background = "#3c3836"
+    foreground = "#fb4934"
+    frame_color = "#1a1a1a"
+    timeout = 20
+    override_pause_level = 60
+    default_icon = dialog-warning
