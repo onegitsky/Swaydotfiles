@@ -25,20 +25,20 @@ focus_follows_mouse yes
 # wofi --show drun -a --hide-scroll -p Search:
 set $mod Mod4
 set $term alacritty
-set $menu tofi-drun | xargs swaymsg exec --
-set $browser firefox
+set $menu sed --in-place "s/output =DP-1/output = $(swaymsg --type get_outputs | jq '.[] | select(.focused).name')/" ~/.config/tofi/config && tofi-drun | xargs swaymsg exec --
+set $browser zen-browser
 set $statusbar waybar
 set $powermenu ~/.local/bin/powermenu.sh
 set $filemanager thunar
 set $neovim alacritty -e nvim
-set $swaylock swaylock --config ~/.config/swaylock/config
+set $gtklock gtklock -m userinfo-module
 
 # Output configuration
 # (more resolutions are available in /usr/share/backgrounds/sway/)
-output DP-1 resolution 1920x1080@144Hz position 1366,0
+output DP-1 adaptive_sync on resolution 1920x1080@144Hz position 1366,0
 output HDMI-A-1 resolution 1366x768 position 0,0
-  output DP-1 bg ~/Path/To/Wallpaper.jpg fill
-  output HDMI-A-1 bg ~/Path/To/Wallpaper2.png fill
+  output DP-1 bg ~/Pictures/Wallpapers/browser/wasdwasd.jpg fill
+  output HDMI-A-1 bg ~/Pictures/Wallpapers/browser/ok.png fill
 
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
@@ -55,12 +55,11 @@ output HDMI-A-1 resolution 1366x768 position 0,0
     bindsym ctrl+alt+q exec $browser
     bindsym $mod+d exec $filemanager
     bindsym $mod+shift+d exec $neovim
-    bindsym $mod+l exec $swaylock
+    bindsym $mod+l exec $gtklock
     bindsym $mod+o exec killall -SIGUSR1 waybar
     bindsym $mod+Print exec grim -g "$(slurp)" - | wl-copy
     floating_modifier $mod normal
     bindsym $mod+Shift+c reload
-    # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
@@ -132,7 +131,7 @@ output HDMI-A-1 resolution 1366x768 position 0,0
     bindsym Return mode "default"
     bindsym Escape mode "default"
   }
-  bindsym $mod+r mode "resize"
+    bindsym $mod+r mode "resize"
 #
 # Utilities:
 #
@@ -145,14 +144,15 @@ output HDMI-A-1 resolution 1366x768 position 0,0
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
+# swayidle -w timeout 1500 'gtklock -m userinfo-module' swayidle -w timeout 1500 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' swayidle -w 500 'systemctl suspend' before-sleep 'gtklock -m userinfo-module'
 include /etc/sway/config.d/*
 exec {
 gsettings set org.gnome.desktop.interface gtk-theme 'Gruvbox-Material-Dark'
 gsettings set org.gnome.desktop.interface icon-theme 'Gruvbox-Material-Dark'
 gsettings set org.gnome.desktop.interface font-name 'Firacode NerdFont'
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-swayidle -w timeout 1200 'swaylock --config ~/.config/swaylock/config' timeout 1200 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' before-sleep 'swaylock --config ~/.config/swaylock/config'
 }
 exec_always {
 killall waybar; waybar
+pkill -f swww-daemon
 }
