@@ -2,17 +2,11 @@
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
     "output": "DP-1",
-    
      "height": 22, // Waybar height (to be removed for auto height)
-    // Archived modules
-    // "custom/gpu",  "custom/weather","sway/window", "custom/gpu",  "custom/media",  
-    // Choose the order of the modules
-
     "modules-left": ["custom/playerctl"],
     "modules-center": ["clock#time", "sway/mode"],
     "modules-right": ["temperature", "memory", "pulseaudio", "network", "tray", "custom/scratchpad_indicator", "custom/wallpaper"],
     
-    // Modules configuration
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -53,7 +47,6 @@
         "tooltip-format": "<big>{:%Y %B \t Date: %D }</big>\n<tt>{calendar}</tt>"
     },
     "temperature": {
-        //"thermal-zone": 1,
         "interval": "15",
         "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
         "critical-threshold": 75,
@@ -75,7 +68,7 @@
         "tooltip": false
     },
     "network": {
-        // "interface": "wlan0", // (Optional) To force the use of this interface,
+        "interface": "wlan0",
         "interval": 15,
         "format-wifi": "<span color=\"#8ec07c\">  {bandwidthUpBytes}</span>",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
@@ -86,9 +79,8 @@
         "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthUpBits}  {bandwidthDownBits}",
         "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n {bandwidthUpBits}  {bandwidthDownBits}"
     },
-// essid for format wifi
     "pulseaudio": {
-        "scroll-step": 5, // %, can be a float
+        "scroll-step": 5,
         "format": "{icon}  {volume:2}% {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
@@ -128,52 +120,4 @@
         "on-click-right": "swaymsg 'move scratchpad'",
         "tooltip": false
     },
-    "custom/arrow1": {
-        "format": "",
-        "tooltip": false
-    },
-    "custom/arrow2": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/arrow3": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/arrow4": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/arrow5": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/arrow6": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/arrow7": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/arrow8": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/arrow9": {
-        "format": "",
-        "tooltip": false
-    },
-
-    "custom/arrow10": {
-        "format": "",
-        "tooltip": false
-    } 
 }
