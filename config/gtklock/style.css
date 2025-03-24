@@ -27,7 +27,6 @@ window {
   color: #fbf1c7;
 }
 
-/* hide "Password:" label */
 #input-label {
   font-size: 0;
 }
