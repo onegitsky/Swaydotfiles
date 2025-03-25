@@ -65,18 +65,18 @@
     font-weight: bold;
 }
 .modules-left {
-    padding-left:5px;
+    padding-left:4.5px;
 }
 .modules-right {
-    padding-right:5px;
+    padding-right:4.5px;
 }
 
 #custom-wallpaper {
     color: #d4ff70;
     background: #3c3836;
     border: 1px solid #1a1a1a;
-    border-radius: 0px;
-    padding: 1 8 0 5px;
+    border-radius: 4px;
+    padding: 0 7 0 6px;
     margin-top: 3px;
     margin-left: 3px;
     margin-bottom: 3px;
@@ -144,8 +144,8 @@
     color: @font_gruv_normal;
     background: #3c3836;
     border: 1px solid #1a1a1a;
-    border-radius: 0px;
-    padding: 1 8 0 8px;
+    border-radius: 4px;
+    padding: 0 8 0 8px;
     margin-top: 3px;
     margin-bottom: 3px;
     box-shadow: 0 0 2 0px #1a1a1a;
@@ -155,8 +155,8 @@
     color: #edffd9;
     background: #3c3836;
     border: 1px solid #1a1a1a;
-    border-radius: 0px;
-    padding: 1 8 0 8px;
+    border-radius: 4px;
+    padding: 0 8 0 8px;
     margin-top: 3px;
     margin-bottom: 3px;
     box-shadow: 0 0 2 0px #1a1a1a;
@@ -165,8 +165,8 @@
 #custom-playerctl {
     color: #b8bb26;
     background: #3c3836;
-    border-radius: 0px;
-    padding: 1 8 0 8px;
+    border-radius: 4px;
+    padding: 0 8 0 8px;
     border: 1px solid #1a1a1a;
     margin-top: 3px;
     margin-bottom: 3px;
@@ -174,8 +174,8 @@
 }
 #custom-playerctl.paused{
     color: @font_gruv_faded;
-    border-radius: 0px;
-    padding: 1 8 0 8px;
+    border-radius: 4px;
+    padding: 0 8 0 8px;
     border: 1px solid #1a1a1a;
     box-shadow: 0 0 2 0px #1a1a1a;
 }
@@ -220,8 +220,8 @@
     color: #fb4934;
     background: #3c3836;
     border: 1px solid #1a1a1a;
-    border-radius: 0px;
-    padding: 1 8 0 8px;
+    border-radius: 4px;
+    padding: 0 8 0 8px;
     margin-top: 3px;
     margin-bottom: 3px;
     margin-right: 3px;
@@ -231,7 +231,7 @@
     color: #fb4934;
     background: #3c3836;
     border: 1px solid #1a1a1a;
-    border-radius: 0px;
+    border-radius: 4px;
     padding: 0 8 0 8px;
     margin-top: 3px;
     margin-bottom: 3px;
@@ -242,8 +242,8 @@
     color: #d3869b;
     background: #3c3836;
     border: 1px solid #1a1a1a;
-    border-radius: 0px;
-    padding: 1 8 0 8px;
+    border-radius: 4px;
+    padding: 0 8 0 8px;
     margin-right: 3px;
     margin-top: 3px;
     margin-bottom: 3px;
@@ -252,7 +252,7 @@
 #pulseaudio.muted {
     color: #a89985;
     border: 1px solid #1a1a1a;
-    border-radius: 0px;
+    border-radius: 4px;
     padding: 0 8 0 8px;
     box-shadow: 0 0 2 0px #1a1a1a;
 }
@@ -260,8 +260,8 @@
     color: #8ec07c;
     background: #3c3836;
     border: 1px solid #1a1a1a;
-    border-radius: 0px;
-    padding: 1 8 0 8px;
+    border-radius: 4px;
+    padding: 0 8 0 8px;
     margin-right: 3px;
     margin-top: 3px;
     margin-bottom: 3px;
@@ -270,7 +270,7 @@
 #tray {
     background: #3c3638;
     border: 1px solid #1a1a1a;
-    border-radius: 0px;
+    border-radius: 4px;
     padding: 0 8 0 8px;
     margin-top: 3px;
     margin-bottom: 3px;
@@ -286,8 +286,8 @@
     /*color: #6ba595;*/
     background: #3c3836;
     border: 1px solid #1a1a1a;
-    border-radius: 0px;
-    padding: 1 8 0 8px;
+    border-radius: 4px;
+    padding: 0 8 0 8px;
     margin-right: 3px;
     margin-top: 3px;
     margin-bottom: 3px;
@@ -300,7 +300,7 @@
     color: #ebdbb2;
     background: #3c3836;
     border: 1px solid #1a1a1a;
-    border-radius: 0px;
+    border-radius: 4px;
     margin-top: 3px;
     margin-bottom: 3px;
     margin-left: 3px;
