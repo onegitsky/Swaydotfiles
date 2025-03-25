@@ -1,11 +1,11 @@
 {
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
+    "layer": "top",
+    "position": "top",
     "output": "DP-1",
-     "height": 22, // Waybar height (to be removed for auto height)
+     "height": 22,
     "modules-left": ["custom/playerctl"],
-    "modules-center": ["clock#time", "sway/mode"],
-    "modules-right": ["temperature", "memory", "pulseaudio", "network", "tray", "custom/scratchpad_indicator", "custom/wallpaper"],
+    "modules-center": ["sway/window", "sway/mode"],
+    "modules-right": ["network", "pulseaudio", "clock#time", "tray", "custom/scratchpad_indicator", "custom/wallpaper"],
     
     "sway/workspaces": {
         "disable-scroll": true,
@@ -35,6 +35,9 @@
         "format": "{}",
         "max-length": 50, 
         "tooltip": false
+        "all-outputs": true,
+        "icon": true,
+        "icon-size": 13
     },
     "tray": {
         "icon-size": 13,
