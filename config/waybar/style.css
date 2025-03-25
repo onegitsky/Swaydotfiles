@@ -21,13 +21,12 @@
 }
 
 @keyframes blink-resize {
-    30% {
-      color: #fbf1c7;
+    25% {
+      color: #eeeeee;
     }
 
     to {
         color: #9d0006;
-        background-color: #504945;
     }
 }
 
@@ -297,14 +296,10 @@
     background: @layout;
 }
 #mode {
-    color: #ebdbb2;
-    background: #3c3836;
-    border: 1px solid #1a1a1a;
-    border-radius: 4px;
+    color: #eeeeee;
     margin-top: 3px;
     margin-bottom: 3px;
-    margin-left: 3px;
-    box-shadow: 0 0 2 0px #1a1a1a;
+    margin-left: 2px;
 }
 #battery {
     background: @battery;
@@ -314,9 +309,9 @@
     background: @backlight;
 }
 #window {
-    margin-right: 40px;
-    margin-left: 40px;
-    font-weight: normal;
+    color: #eeeeee;
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
 #custom-weather {
     background: @mode;
