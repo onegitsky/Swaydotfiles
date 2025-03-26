@@ -94,7 +94,7 @@
     margin-bottom: 2px;
 }
 #custom-playerctl.paused{
-    color: @font_gruv_faded;
+    color: #3d3d3d;
     padding: 0 8 0 8px;
 }
 #custom-arrow0 {
