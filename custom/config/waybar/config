@@ -96,7 +96,7 @@
     "custom/scratchpad_indicator": {
         "interval": 1,
         "exec": "swaymsg -t get_tree | ~/.config/waybar/custom_modules/scratchpads.py",
-        "format": " {}",
+        "format": "󱂬 {}",
         "on-click": "swaymsg 'scratchpad show'",
         "on-click-right": "swaymsg 'move scratchpad'",
         "tooltip": false
