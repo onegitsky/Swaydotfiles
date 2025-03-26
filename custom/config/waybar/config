@@ -1,0 +1,111 @@
+{
+    "layer": "top",
+    "position": "top",
+    "output": "DP-1",
+     "height": 23,
+    "modules-left": [ "custom/wallpaper","custom/arrow0","custom/playerctl","custom/arrow1"],
+    "modules-center": ["sway/window","sway/mode"],
+    "modules-right": ["pulseaudio","clock#time","network","tray","custom/scratchpad_indicator"],
+    
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "Home",
+            "2": "Work",
+            "3": "Music",
+            "4": "Game",
+            "5": "Slush",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+    "custom/wallpaper": {
+        "format": "",
+        "on-click": "~/.local/bin/swww_wallpapers.sh",
+        "tooltip": false,
+        "interval": 0
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\"> {} </span>"
+    },
+    "sway/window": {
+        "format": "{}",
+        "max-length": 40, 
+        "tooltip": false,
+        "all-outputs": true,
+        "icon": true,
+        "icon-size": 13,
+    },
+    "tray": {
+        "icon-size": 13,
+        "spacing": 4
+    },
+    "clock#time": {
+        "interval": "60",
+        "format": "󰥔 {:%I:%M%p}",
+        "tooltip": true,
+        "tooltip-format": "<big>{:%Y %B \t Date: %D }</big>\n<tt>{calendar}</tt>"
+    },
+    "network": {
+        "interval": 15,
+        "format-wifi": "<span color=\"#8ec07c\"></span>",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "󰖪",
+        "format-alt": "  {ifname}",
+        "family": "ipv4",
+        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthUpBits}  {bandwidthDownBits}",
+        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n {bandwidthUpBits}  {bandwidthDownBits}"
+    },
+    "pulseaudio": {
+        "scroll-step": 5, // %, can be a float
+        "format": "{icon}  {volume:2}% {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "<span color=\"#ebdbb2\"></span> 0% {format_source}",
+        "format-source": "<span color=\"#d3869b\"> {volume:2}%</span>",
+        "format-source-muted": "<span color=\"#a89985\"></span><span color=\"#ebdbb2\"></span>",
+        "max-volume": 125,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click-middle": "pavucontrol",
+        "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "tooltip": false,
+    },
+    "custom/playerctl": {
+        "exec": "~/.config/waybar/custom_modules/media-player-status.py --player=spotify",
+        "return-type": "json",
+        "on-click": "playerctl -p spotify play-pause",
+        "on-click-middle": "playerctl -p spotify volume 0.5 && notify-send 'Spotify' '50% Volume Set!'$(playerctl -p spotify metadata --format '{{duration(position)}}/{{duration(mpris:length)}}')",
+        "on-click-right": "playerctl -p spotify volume 0.6 && notify-send 'Spotify' $(playerctl -p spotify metadata --format '{{duration(position)}}/{{duration(mpris:length)}} 󰕾 {{volume * 100}}%')",
+        "on-scroll-up": "playerctl -p spotify volume 0.2+ && notify-send 'Spotify' $(playerctl -p spotify metadata --format '{{duration(position)}}/{{duration(mpris:length)}} 󰕾 {{volume * 100}}%')",
+        "on-scroll-down": "playerctl -p spotify volume 0.2- && notify-send 'Spotify' $(playerctl -p spotify metadata --format '{{duration(position)}}/{{duration(mpris:length)}} 󰕾 {{volume * 100}}%')",
+        "tooltip": false,
+    },
+    "custom/scratchpad_indicator": {
+        "interval": 1,
+        "exec": "swaymsg -t get_tree | ~/.config/waybar/custom_modules/scratchpads.py",
+        "format": " {}",
+        "on-click": "swaymsg 'scratchpad show'",
+        "on-click-right": "swaymsg 'move scratchpad'",
+        "tooltip": false
+    },
+    "custom/arrow0": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/arrow1": {
+        "format": "",
+        "tooltip": false
+    },

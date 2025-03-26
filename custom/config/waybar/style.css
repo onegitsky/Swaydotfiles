@@ -1,0 +1,145 @@
+@keyframes blink-warning {
+    70% {
+        color: @light;
+    }
+
+    to {
+        color: @light;
+        background-color: @warning;
+    }
+}
+
+@keyframes blink-critical {
+    70% {
+      color: @light;
+    }
+
+    to {
+        color: @light;
+        background-color: @critical;
+    }
+}
+
+@keyframes blink-resize {
+    25% {
+      color: #eeeeee;
+    }
+
+    to {
+        color: #9d0006;
+    }
+}
+
+@define-color light #D8DEE9;
+@define-color warning #ebcb8b;
+@define-color critical #cc241d;
+@define-color font_gruv_faded #a89985;
+
+
+* {
+    font-family: "FiraMono NerdFont";
+    border: solid;
+    border-radius: 0px;
+    min-height: 0;
+    font-weight: bold;
+}
+
+#waybar {
+    background: rgba(30, 30, 30, 0.95);
+    font-family: "FiraMono NerdFont";
+    font-size: 8.6pt;
+    font-weight: bold;
+}
+.modules-left {
+    padding-left:4.5px;
+}
+.modules-right {
+    padding-right:4.5px;
+}
+
+#custom-wallpaper {
+    color: #edffd9;
+    padding: 0 8 0 8px;
+    margin-top: 2px;
+    margin-right: 5px;
+    margin-bottom: 2px;
+}
+#mode {
+    animation-name: blink-resize;
+    animation-duration: 4s;
+}
+#network.disconnected {
+    color: @font_gruv_faded;
+}
+#clock.time {
+    color: #93b9aa;
+    padding: 0 8 0 8px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-right: 5px;
+}
+
+#custom-scratchpad_indicator {
+    color: #edffd9;
+    padding: 0 8 0 8px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#custom-playerctl {
+    color: #1a1a1a;
+    background: #cdbcff;
+    padding: 0 8 0 8px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+#custom-playerctl.paused{
+    color: @font_gruv_faded;
+    padding: 0 8 0 8px;
+}
+#custom-arrow0 {
+    color: #cdbcff;
+    margin-top: 0.1px;
+    font-size: 14.5;
+}
+#custom-arrow1 {
+    color: #cdbcff;
+    margin-bottom: 0.1px;
+    font-size: 15;
+}
+#pulseaudio {
+    color: #d3869b;
+    padding: 0 8 0 8px;
+    margin-right: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    box-shadow: 0 0 0 0px #1a1a1a;
+}
+#pulseaudio.muted {
+    color: #a89985;
+    padding: 0 8 0 8px;
+}
+#network {
+    color: #8ec07c;
+    padding: 0 13 0 7px;
+    margin-right: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+#tray {
+    padding: 0 8 0 8px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-right: 5px;
+}
+#mode {
+    color: #eeeeee;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 2px;
+}
+#window {
+    color: #eeeeee;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
