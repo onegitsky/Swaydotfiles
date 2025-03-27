@@ -3,7 +3,7 @@
 
 **GTK Theme:** Gruvbox-Material-Dark <br>  
 **Font:** FiraCode Nerd Font <br>  
-**Application Launcher:** tofi *(wofi powermenu)* <br>  
+**Application Launcher:** tofi <br>  
 **SWWW:** Module built into waybar to change wallpapers <br>  
 
 ![Image](https://github.com/user-attachments/assets/6457d819-c843-448a-9eb3-50bbcccce780)
