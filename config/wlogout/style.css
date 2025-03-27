@@ -8,12 +8,16 @@ window {
 }
 
 button {
-    border-radius: 10px;
+    border-radius: 20px;
     color: #eeeeee;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	border: 1px dotted;
+	border-color: rgba(205, 188, 255, 0.5)
 	background-color: #191919;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 25%;
+	background-size: 24%;
 }
 
 button:focus, button:active, button:hover {
