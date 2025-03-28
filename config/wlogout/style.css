@@ -4,25 +4,27 @@
 }
 
 window {
+	font-size: 13pt;
 	background-color: rgba(25, 25, 25, 0.9);
 }
 
 button {
-    border-radius: 20px;
-    color: #eeeeee;
+    	border-radius: 30px;
 	margin-right: 10px;
 	margin-bottom: 10px;
-	border: 1px dotted;
-	border-color: rgba(205, 188, 255, 0.5)
-	background-color: #191919;
+    	color: #4b4b4b;
+	background-color: rgba(25, 25, 25, 0.75);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 24%;
 }
 
 button:focus, button:active, button:hover {
-	background-color: #1e1e1e;
-	outline-style: none;
+	background-color: rgba(35, 35, 35, 0.75);
+	background-size: 28%
+	border: 3px inset;
+	border-color: rgba(205, 188, 255, 0.5)
+	color: #eeeeee;
 }
 
 #lock {
