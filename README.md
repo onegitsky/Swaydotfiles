@@ -1,10 +1,5 @@
-# Personal Sway Dotfiles
-<br>
-
-**GTK Theme:** Gruvbox-Material-Dark <br>  
-**Font:** FiraCode Nerd Font <br>  
-**Application Launcher:** tofi <br>  
-**SWWW:** Module built into waybar to change wallpapers <br>  
+# Old Sway Gruvbox Dotfiles
+> Up to date config can be found [here](https://github.com/onegitsky/arch-sway-dotfiles)
 
 ![Image](https://github.com/user-attachments/assets/6457d819-c843-448a-9eb3-50bbcccce780)
 ![Image](https://github.com/user-attachments/assets/074e2637-f207-4a9a-b7eb-ffcb526c3464)
